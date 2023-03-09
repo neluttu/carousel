@@ -8,6 +8,7 @@ body, html {
     font-size: 18px;
     font-weight: 300;
     display: flex;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -15,9 +16,7 @@ body, html {
 }
 
 #container {
-    width: 1145px;
     max-width:1145px;
-    min-height:200px; 
     margin:auto;
     background-color: white;
     border-radius: 10px;
@@ -67,11 +66,13 @@ body, html {
 #gallery {
     display: flex;
     align-items: center;
+    scroll-behavior: smooth;
   }
   
 #gallery > div:first-of-type {
     width: 50px;
     cursor: pointer;
+    height: 100%;
   }
   
 #gallery > div:last-of-type {
@@ -84,7 +85,7 @@ body, html {
     min-height: 200px;
   }
 
-#gallery > div + div {
+#gallery div + div {
     margin-left: 2%;
 }
 
@@ -106,11 +107,23 @@ body, html {
 #images > div {
     width: 270px;
     border-radius: 10px;
-    border:1px solid #e2e2e2;
+    border:1px solid #fff;
     font-size: 18px;
     font-weight: 600;
     text-align: center;
     padding-bottom: 30px;
+    transition: all .3s ease;
+    box-shadow: 0 0 10px #f4efe5;
+}
+
+#images > div:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+#images > div span {
+    font-weight: 300;
+    font-size:16px
 }
 
 #images > div img {
@@ -132,4 +145,14 @@ button {
     cursor: pointer;
     -webkit-box-shadow: 0px 0px 15px 5px rgba(249,221,215,0.72); 
     box-shadow: 0px 0px 15px 5px rgba(249,221,215,0.72);
+    transition: all .3s ease;
+}
+
+button:hover {
+    background-color: #ca4531;
+    box-shadow: none;
+}
+
+.button {
+    text-align:center;
 }

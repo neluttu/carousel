@@ -19,8 +19,8 @@
                 <li>Fashion</li>
                 <li>Sculpture</li>
             </ul>
-            <div id="gallery">
-                <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#b1afad" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <div id="gallery" class="container">
+                <div class="scrollleft"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#b1afad" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <polyline points="15 6 9 12 15 18" />
                   </svg></div>
@@ -30,37 +30,80 @@
                         <br><br>
                         Britta Clay Art
                         <br>
-                        Sat, 24 October 2020
+                        <span>Sat, 24 October 2020</span>
                     </div>
                     <div>
                         <img src="https://images.unsplash.com/photo-1654247898917-5fc5c04515ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE5fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=270&q=70">
                         <br><br>
                         Britta Clay Art
                         <br>
-                        Sat, 24 October 2020
+                        <span>Sat, 24 October 2020</span>
                     </div>
                     <div>
                         <img src="https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=270&q=80">
                         <br><br>
                         Britta Clay Art
                         <br>
-                        Sat, 24 October 2020
+                        <span>Sat, 24 October 2020</span>
                     </div>
                     <div>
                         <img src="https://images.unsplash.com/photo-1658438844685-8b6d37322f4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2704&q=170">
                         <br><br>
                         Britta Clay Art
                         <br>
-                        Sat, 24 October 2020
+                        <span>Sat, 24 October 2020</span>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1481277542470-605612bd2d61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=270&q=80">
+                        <br><br>
+                        Britta Clay Art
+                        <br>
+                        <span>Sat, 24 October 2020</span>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1654247898917-5fc5c04515ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE5fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=270&q=70">
+                        <br><br>
+                        Britta Clay Art
+                        <br>
+                        <span>Sat, 24 October 2020</span>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=270&q=80">
+                        <br><br>
+                        Britta Clay Art
+                        <br>
+                        <span>Sat, 24 October 2020</span>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1658438844685-8b6d37322f4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2704&q=170">
+                        <br><br>
+                        Britta Clay Art
+                        <br>
+                        <span>Sat, 24 October 2020</span>
                     </div>
                 </div>
-                <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#b1afad" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <div class="scrollright"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#b1afad" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <polyline points="9 6 15 12 9 18" />
                   </svg></div>
             </div>
+            <script>
+                $(document).ready(function () {
+                    $(".scrollright").click(function () { 
+                    let leftPos = $('#images').scrollLeft();
+                    $("#images").animate({scrollLeft: leftPos + $("#images").width()}, 600);
+                });   
+                                
+                    $(".scrollleft").click(function () { 
+                    let leftPos = $('#images').scrollLeft();
+                    $("#images").animate({scrollLeft: leftPos - $("#images").width()}, 600);
+                });   
+            });                  
+            </script>
             <br>
-            <center><button>View more</button></center>
+            <div class="button">
+                <button>View more</button>
+            </div>
         </div>
     </body>
 </html>
